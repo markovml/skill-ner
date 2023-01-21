@@ -30,7 +30,7 @@ pip install skillNer
 ```
 
 2. Next, run the following command to install ``spacy en_core_web_lg ``
-which is one of the main plugins of SkillNer. Thanks its modular nature, you can 
+which is one of the main plugins of SkillNer. Thanks its modular nature, you can
 customize SkillNer behavior just by adjusting  | plugin | unplugin modules. Don't worry about these details, we will discuss them in details in the an **upcomming Tutorial section**.
 
 ```bash
@@ -46,7 +46,7 @@ With these initial steps being accomplished, let’s dive a bit deeper into skil
 
 Let’s say you want to extract skills from the following job posting:
 
-    “You are a Python developer with a solid experience in web development and can manage projects. 
+    “You are a Python developer with a solid experience in web development and can manage projects.
     You quickly adapt to new environments and speak fluently English and French”
 
 ### Annotating skills
@@ -88,7 +88,7 @@ annotations = skill_extractor.annotate(job_description)
 ### Exploit annotations
 
 Voilà! Now you can inspect results by rendering the text with the annotated skills.
-You can acheive that through the ``.describe`` method. Note that the output of this method is 
+You can acheive that through the ``.describe`` method. Note that the output of this method is
 litteraly an HTML document that gets rendered in your notebook.
 
 
@@ -97,7 +97,7 @@ litteraly an HTML document that gets rendered in your notebook.
 </p>
 
 
-Besides, you can use the raw result of the annotations. 
+Besides, you can use the raw result of the annotations.
 Below is the value of the ``annotations`` variable from the code above.
 
 
@@ -108,20 +108,20 @@ Below is the value of the ``annotations`` variable from the code above.
     'results': {
         'full_matches': [
             {
-                'skill_id': 'KS122Z36QK3N5097B5JH', 
-                'doc_node_value': 'web development', 
+                'skill_id': 'KS122Z36QK3N5097B5JH',
+                'doc_node_value': 'web development',
                 'score': 1, 'doc_node_id': [10, 11]
             }
         ], '
         ngram_scored': [
             {
-                'skill_id': 'KS125LS6N7WP4S6SFTCK', 
-                'doc_node_id': [3], 
-                'doc_node_value': 'python', 
-                'type': 'fullUni', 
-                'score': 1, 
+                'skill_id': 'KS125LS6N7WP4S6SFTCK',
+                'doc_node_id': [3],
+                'doc_node_value': 'python',
+                'type': 'fullUni',
+                'score': 1,
                 'len': 1
-            }, 
+            },
         # the other annotated skills
         # ...
         ]
@@ -131,12 +131,12 @@ Below is the value of the ``annotations`` variable from the code above.
 
 # Contribure
 
-SkillNer is the first **Open Source** skill extractor. 
+SkillNer is the first **Open Source** skill extractor.
 Hence it is a tool dedicated to the community and thereby relies on its contribution to evolve.
 
-We did our best to adapt SkillNer for usage and fixed many of its bugs. Therefore, we believe its key features 
+We did our best to adapt SkillNer for usage and fixed many of its bugs. Therefore, we believe its key features
 make it ready for a diversity of use cases. However, it still has not reached 100% stability. SkillNer needs the assistance of the community to be adapted further
-and broaden its usage. 
+and broaden its usage.
 
 
 You can contribute to SkillNer either by

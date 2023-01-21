@@ -106,7 +106,7 @@ class Word:
 
 
 class Text:
-    """The main object to store/preprocess a raw text. 
+    """The main object to store/preprocess a raw text.
     The object behaviour is like a list according to words.
     """
 
@@ -338,7 +338,7 @@ class Text:
         Returns
         -------
         List[Word]
-            Returns a list of words where in each word the `start` and `end` 
+            Returns a list of words where in each word the `start` and `end`
             properties were filled by the starting and ending position of the word.
 
         Examples

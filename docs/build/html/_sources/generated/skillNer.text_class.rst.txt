@@ -3,28 +3,19 @@
 
 .. automodule:: skillNer.text_class
 
-   
-   
-   
 
-   
-   
-   
 
-   
-   
+
+
+
+
+
+
+
+
    .. rubric:: Classes
 
    .. autosummary::
-   
+
       Text
       Word
-   
-   
-
-   
-   
-   
-
-
-

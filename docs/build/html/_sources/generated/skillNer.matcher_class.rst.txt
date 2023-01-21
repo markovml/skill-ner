@@ -3,28 +3,19 @@
 
 .. automodule:: skillNer.matcher_class
 
-   
-   
-   
 
-   
-   
-   
 
-   
-   
+
+
+
+
+
+
+
+
    .. rubric:: Classes
 
    .. autosummary::
-   
+
       Matchers
       SkillsGetter
-   
-   
-
-   
-   
-   
-
-
-

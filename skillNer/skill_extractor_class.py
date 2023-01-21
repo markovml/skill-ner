@@ -149,7 +149,7 @@ class SkillExtractor:
         self,
         results: dict
     ):
-        """To display the annotated skills. 
+        """To display the annotated skills.
         This method uses built-in classes of spacy to render annotated text, namely `displacy`.
 
         Parameters
@@ -159,7 +159,7 @@ class SkillExtractor:
 
         Results
         -------
-        None 
+        None
             render the text with annotated skills.
         """
 

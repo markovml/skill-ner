@@ -1,7 +1,7 @@
-# Skill db prep pipeline 
+# Skill db prep pipeline
 ## 1. create skills_processed.json
-- generate **skill_name** : raw skill label 
-- generate **skill_type** : skill type if found in db 
+- generate **skill_name** : raw skill label
+- generate **skill_type** : skill type if found in db
 - generate **skill_cleaned** : cleaned skill label (lower case , no punctuation and remove description python (programming langauge) -> python )
 - generate **skill_len** : length of skill_cleaned (number of tokens in skill_cleaned) : len(skill_cleaned.split(' '))
 - generate **skill_stemmed** : stemmed skill_cleaned (see skillner/cleaner.py)
@@ -9,7 +9,7 @@
 - generate **match_on_stemmed** : True if skill_len == 1
 - generate **abbreviation** : if found in db else ''
 
-## 2. create token_dist.json 
+## 2. create token_dist.json
 
 this is step is simple we just ctockenize text to get the dist for each token in our skills db
 
@@ -40,7 +40,7 @@ with open('./skillNer/data/token_dist.json', 'w', encoding='utf-8') as f:
 ```
 ## 3. create skill_db_relax_20.json
 
-This script will generate the skill_db_relax_20.json i tried to document it so you can be able to modulate it for more redeability but what it do is some kind of data augmentation by generating surface forms for each skill . the augmentation is done given it len 
+This script will generate the skill_db_relax_20.json i tried to document it so you can be able to modulate it for more redeability but what it do is some kind of data augmentation by generating surface forms for each skill . the augmentation is done given it len
 ```python
 # ============
 # Script to generate skill db that support multiple surface forms for the matching procedure
@@ -70,7 +70,7 @@ for key in SKILL_DB:
     # param diferentiate software and gramatical skills
     uni_match_on_stemmed = SKILL_DB[key]['match_on_stemmed']
 
-    # surface forms creation with some relaxation/enrichments 
+    # surface forms creation with some relaxation/enrichments
     # to increase proba of matching with natural text
 
     if abv != '':
@@ -91,19 +91,19 @@ for key in SKILL_DB:
         low_surface_form.append(' '.join(inv_stemmed_tokens))
         last = stemmed_tokens[-1]
         start = stemmed_tokens[0]
-        # if last token of skill is unique let be identifier of the skill 
+        # if last token of skill is unique let be identifier of the skill
         # (works well with software where we may choose to use only one term )
         if dist[last] == 1:
             low_surface_form.append(last)
         # very noisy enrichment (to be deleted)
-        """ 
+        """
         if dist[start]/dist[last] < RELAX_PARAM:
             low_surface_form.append(start)
         """
 
     if skill_len > 2:
         high_surface_form['full'] = skill_lemmed
-        # if skill with more than 2 tokens the matcher can be on 
+        # if skill with more than 2 tokens the matcher can be on
         # the skill tokens then we agg matches when scoring
         match_on_tokens = True
     # write skill
@@ -143,8 +143,8 @@ for key in new_skill_db:
         new_skill_db[key]['low_surface_forms'] = new_l
 
 
-# search for abreviation if found 'AQM (Advange quality mangement)' -> AQM 
-# step 1 extract susptible abv using regex 
+# search for abreviation if found 'AQM (Advange quality mangement)' -> AQM
+# step 1 extract susptible abv using regex
 # step 2 check if abv is unique in the db (by looking at token dist )
 
 n_grams = [SKILL_DB[key] for key in SKILL_DB if SKILL_DB[key]['skill_len'] > 1]
@@ -184,10 +184,7 @@ for key in new_skill_db:
                 skill_low.append(abv)
         new_skill_db[key]['low_surface_forms'] = skill_low
 
-# final save file 
+# final save file
 with open('./skillNer/data/skill_db_relax_20.json', 'w', encoding='utf-8') as f:
     json.dump(new_skill_db, f, ensure_ascii=False, indent=4)
 ```
-
-
-

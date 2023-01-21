@@ -2,22 +2,3 @@
 ========================
 
 .. automodule:: skillNer.general_params
-
-   
-   
-   
-
-   
-   
-   
-
-   
-   
-   
-
-   
-   
-   
-
-
-

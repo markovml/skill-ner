@@ -5,13 +5,13 @@ Contribute
 Why and How to contribute?
 -----------------------------------------
 
-SkillNer is the first **Open Source** skill extractor. 
+SkillNer is the first **Open Source** skill extractor.
 Hence it is a tool dedicated to the community and thereby relies on its contribution to evolve.
 
-We did our best to adapt SkillNer for usage and fixed many of its bugs. Therefore, we believe its key features 
+We did our best to adapt SkillNer for usage and fixed many of its bugs. Therefore, we believe its key features
 make it ready for a diversity of use cases.
 However, it still has not reached 100% stability. SkillNer needs the assistance of the community to be adapted further
-and broaden its usage. 
+and broaden its usage.
 
 
 You can contribute to SkillNer either by
@@ -50,7 +50,7 @@ Afterward, ``cd`` to SkillNer folder
 Setup the environment
 ~~~~~~~~~~~~~~~~~~~~~
 
-Here, we will create a ``conda environment``. All the dependencies of the SkillNer are mentioned in ``environment.yml`` file. 
+Here, we will create a ``conda environment``. All the dependencies of the SkillNer are mentioned in ``environment.yml`` file.
 Lauch you Anaconda prompt and cd to SkillNer folder that you have just cloned, then run the following command
 
 ::
@@ -58,7 +58,7 @@ Lauch you Anaconda prompt and cd to SkillNer folder that you have just cloned, t
   $ conda env create -f environment.yml
 
 
-We are almost done, in a notebook cell run the following command to install ``spacy en_core_web_sm`` 
+We are almost done, in a notebook cell run the following command to install ``spacy en_core_web_sm``
 or run the sandbox notebook (this notebook comes with SkillNer repo)
 
 
@@ -68,11 +68,11 @@ or run the sandbox notebook (this notebook comes with SkillNer repo)
 
 
 .. note::
-    You can set up the environment through the classic way by creating a ``virtual environment`` and running 
+    You can set up the environment through the classic way by creating a ``virtual environment`` and running
     ::
 
       $ pip install -r requirements.txt
-    
+
     However, you need to install additional packages to be able to use the python interpreter in a Jupyter notebook.
 
 
@@ -86,7 +86,7 @@ To contribute, make sure to follow these guidelines.
 Report an issue
 ~~~~~~~~~~~~~~~
 
-When reporting an issue, try to be as much clear as possible. Describe the issue and the expected behavior. 
+When reporting an issue, try to be as much clear as possible. Describe the issue and the expected behavior.
 Provide us with the (buggy) code snippets so that we can reproduce the issue.
 
 
@@ -95,7 +95,7 @@ Pull request
 
 In the description of the pull request, mention its purpose (fix bug, add features, code enhancement, ...).
 
-If you are willing to push code to SkillNer, make sure to document it through docstrings. 
+If you are willing to push code to SkillNer, make sure to document it through docstrings.
 Also, add comments to your code to explain what it does.
 
 This will help us revue your contribution.

@@ -92,7 +92,7 @@ def stem_text(
     text: str,
     stemmer=PorterStemmer(),
 ) -> str:
-    """To stem a text 
+    """To stem a text
 
     Parameters
     ----------

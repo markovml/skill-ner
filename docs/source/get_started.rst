@@ -1,8 +1,8 @@
 Getting started
 ===============
 
-It is easy to get started with **SkillNer** and take advantage of its features. 
-This starter guide will walk you through the steps to follow 
+It is easy to get started with **SkillNer** and take advantage of its features.
+This starter guide will walk you through the steps to follow
 and will provide you with small snippets to get started.
 
 
@@ -17,7 +17,7 @@ SkillNer can be installed through the *python package-manager* pip by running th
 
 
 Also, you need to download ``spacy en_core_web_sm``. We will need it to initialize an NLP object that will
-be plugged into SkillNer. To do so, run the following command:   
+be plugged into SkillNer. To do so, run the following command:
 
 ::
 
@@ -29,27 +29,27 @@ The last installation might take a while to be accomplished since ``en_core_web_
 
 .. note::
 
-    Thanks to its modular nature, you can customize the behavior of SkillNer just 
-    by tuning | pluging | unpluging modules. Don't worry about that, we will get into it later! 
+    Thanks to its modular nature, you can customize the behavior of SkillNer just
+    by tuning | pluging | unpluging modules. Don't worry about that, we will get into it later!
 
 
 
 Quickstart
 ---------
 
-With these initial steps being accomplished, 
+With these initial steps being accomplished,
 let's dive a bit deeper into SkillNer through a worked example.
 
 
 Let's say you want to extract skills from the following job posting:
 
     *"You are a Python developer with a solid experience in web development
-    and can manage projects. You quickly adapt to new environments 
+    and can manage projects. You quickly adapt to new environments
     and speak fluently English and French"*
 
 
- 
-1. We start first by importing modules, particularly spacy and SkillExtractor. 
+
+1. We start first by importing modules, particularly spacy and SkillExtractor.
 Note that if you are using SkillNer for the first time, it might take a while to download **SKILL_DB**.
 
 **SKILL_DB** is SkillNer default skills database. It was built upon `EMSI skills database <https://skills.emsidata.com/>`_.
@@ -84,7 +84,7 @@ Note that if you are using SkillNer for the first time, it might take a while to
     # extract skills from job_description
     job_description = """
     You are a Python developer with a solid experience in web development
-    and can manage projects. You quickly adapt to new environments 
+    and can manage projects. You quickly adapt to new environments
     and speak fluently English and French
     """
 
@@ -99,42 +99,42 @@ Note that if you are using SkillNer for the first time, it might take a while to
         'results': {
             'full_matches': [
                 {
-                    'skill_id': 'KS122Z36QK3N5097B5JH', 
-                    'doc_node_value': 'web development', 
+                    'skill_id': 'KS122Z36QK3N5097B5JH',
+                    'doc_node_value': 'web development',
                     'score': 1, 'doc_node_id': [10, 11]
                 }
             ], '
             ngram_scored': [
                 {
-                    'skill_id': 'KS125LS6N7WP4S6SFTCK', 
-                    'doc_node_id': [3], 
-                    'doc_node_value': 'python', 
-                    'type': 'fullUni', 
-                    'score': 1, 
+                    'skill_id': 'KS125LS6N7WP4S6SFTCK',
+                    'doc_node_id': [3],
+                    'doc_node_value': 'python',
+                    'type': 'fullUni',
+                    'score': 1,
                     'len': 1
-                }, 
+                },
                 {
-                    'skill_id': 'KS1267F6MSPN366LX7ST', 
-                    'doc_node_id': [14, 15], 
-                    'doc_node_value': 'manage projects', 
-                    'type': 'lowSurf', 
-                    'score': 2, 
+                    'skill_id': 'KS1267F6MSPN366LX7ST',
+                    'doc_node_id': [14, 15],
+                    'doc_node_value': 'manage projects',
+                    'type': 'lowSurf',
+                    'score': 2,
                     'len': 2
-                }, 
+                },
                 {
-                    'skill_id': 'KS123K75YYK8VGH90NCS', 
-                    'doc_node_id': [25], 
-                    'doc_node_value': 'english', 
-                    'type': 'lowSurf', 
-                    'score': 1, 
+                    'skill_id': 'KS123K75YYK8VGH90NCS',
+                    'doc_node_id': [25],
+                    'doc_node_value': 'english',
+                    'type': 'lowSurf',
+                    'score': 1,
                     'len': 1
-                }, 
+                },
                 {
-                    'skill_id': 'KS1243976G466GV63ZBY', 
-                    'doc_node_id': [27], 
-                    'doc_node_value': 'french', 
-                    'type': 'lowSurf', 
-                    'score': 1, 
+                    'skill_id': 'KS1243976G466GV63ZBY',
+                    'doc_node_id': [27],
+                    'doc_node_value': 'french',
+                    'type': 'lowSurf',
+                    'score': 1,
                     'len': 1
                 }
             ]
@@ -168,4 +168,4 @@ The above snippets show a basic example of a SkillNer use case.
 By simply being able to extract skills from text, SkillNer opens thousands of other application
 from describing the market labor to constructing knowledge graphs.
 
-For further readings, check the :ref:`tutorials` section. 
+For further readings, check the :ref:`tutorials` section.

@@ -3,27 +3,18 @@
 
 .. automodule:: skillNer.skill_extractor_class
 
-   
-   
-   
 
-   
-   
-   
 
-   
-   
+
+
+
+
+
+
+
+
    .. rubric:: Classes
 
    .. autosummary::
-   
+
       SkillExtractor
-   
-   
-
-   
-   
-   
-
-
-
