@@ -80,8 +80,8 @@ class Utils:
         """
 
         len_ = len(text)
-        unique_skills = list(set([match['skill_id'] for match in matches]))
-        skill_text_match_bin = [0] * len_
+        # unique_skills = list(set([match['skill_id'] for match in matches]))
+        # skill_text_match_bin = [0] * len_
         match_df = pd.DataFrame(matches)
         match_df_group = match_df.groupby('skill_id')['doc_node_id']
         corpus = []
@@ -100,8 +100,8 @@ class Utils:
 
     def one_gram_sim(self, text_str, skill_str):
         # transform into sentence
-        text = text_str + ' ' + skill_str
-        tokens = self.nlp(text)
+        # text = text_str + ' ' + skill_str
+        tokens = [token for token in self.nlp.pipe([text_str, skill_str])]
         token1, token2 = tokens[0], tokens[1]
 
         def _compute_distance_sim(txt, skill):
@@ -118,7 +118,7 @@ class Utils:
 
     # try Levenshtein Distance  if words not found in spacy corpus
 
-    def compute_w_ratio(self, skill_id, matched_tokens, late_match_penality=0.1):
+    def compute_w_ratio(self, skill_id, matched_tokens, late_match_penality=0.2):
         skill_name = self.skills_db[skill_id]['high_surfce_forms']['full'].split(
             ' ')
         skill_len = self.skills_db[skill_id]['skill_len']
